@@ -1,0 +1,84 @@
+.Home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 100vh;
+}
+.topRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+.bottomRow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 50vh;
+    width: 100%;
+}
+.bottomRow > h1{
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+.bottomRow > h3{
+    font-family: 'Homemade Apple', cursive;
+}
+.model{
+    height: 25vh;
+    width: 15%;
+}
+
+.CardArea{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 150vh;
+    margin-top: 5%;
+}
+
+.Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 65vh;
+    width: 25%;
+    box-shadow: 5px 5px 10px rgb(71, 71, 71);
+    margin: 2%;
+    background-image: linear-gradient(to top, rgb(136, 255, 165),cyan, white);
+    border-radius: 10px;  
+}
+
+.Card:hover{
+    transform: scale(1.055,1.055);
+}
+.Card>img{
+    width: 100%;
+    height: 40vh;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.Card > h3{
+    font-family: 'Mochiy Pop One', sans-serif;
+    padding: 5%;
+    font-weight: 200;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .CardArea{
+        flex-direction: column;
+    }
+    .Card{
+        width: 50%;
+    }
+}
