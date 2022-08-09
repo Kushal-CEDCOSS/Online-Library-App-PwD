@@ -5,6 +5,7 @@
     justify-content: space-evenly;
     width: 100%;
     min-height: 100vh;
+    background-image: linear-gradient(to right, #579AE1, #4F8CCD, #386494, #2E5179, #234060);
 }
 .topRow{
     display: flex;
@@ -13,6 +14,11 @@
     justify-content: space-evenly;
     width: 80%;
 }
+#search{
+    font-size: 2vw;
+    color: white;
+}
+
 
 .bottomRow{
     display: flex;
@@ -24,8 +30,10 @@
 }
 .bottomRow > h1{
     font-family: 'Mochiy Pop One', sans-serif;
+    color: white;
 }
 .bottomRow > h3{
+    color: white;
     font-family: 'Homemade Apple', cursive;
 }
 .model{
@@ -75,6 +83,13 @@
 }
 
 @media screen and (max-width: 700px) {
+    .topRow{
+        flex-direction: column;
+        min-height: 20vh;
+    }
+    #searchButton{
+        margin-top: 5%;
+    }
     .CardArea{
         flex-direction: column;
     }

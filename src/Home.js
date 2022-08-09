@@ -25,7 +25,7 @@ const style = {
   boxShadow: 24,
   p: 4,
   borderRadius: '10px',
-  backgroundImage: 'url("https://c.tenor.com/aV0h3VAHWUAAAAAC/gradient.gif")',
+  backgroundImage: 'url("https://phoneky.co.uk/thumbs/screensavers/down/abstract/lila_fv24d1zi.gif")',
   backgroundRepeat: 'no-repeat',
   backgroundSize:'cover',
 };
@@ -68,13 +68,13 @@ const Home = () => {
   return (
     <div className="Home">
       <div className="topRow">
-        <Button sx={{fontFamily: 'Mochiy Pop One, sans-serif', color: ''}} variant="text" onClick={goHome}>Home</Button>
-        <TextField sx={{width: '50%'}} id="search" label="Search a book..." variant="standard" />
-        <Button variant="outlined" onClick={searchBook}>Search</Button>
+        <Button sx={{fontFamily: 'Mochiy Pop One, sans-serif', color: 'white', fontSize: '2vw'}} variant="text" onClick={goHome}>Home</Button>
+        <TextField sx={{width: '50%', color: 'white'}} id="search" label="Search a book..." variant="standard" />
+        <Button id="searchButton" sx={{color: 'white', border: 'none', width: '8%'}} variant="outlined" onClick={searchBook}><i className="fa-solid fa-magnifying-glass fa-2x"></i></Button>
       </div>
       {context.check[0] ? <LinearProgress sx={{width: '100%', bgcolor:'#17fc86', marginTop: '2%'}}/> : null}
       <div className="bottomRow">
-        {context.booksArray[0].length === 0 ? <><h1>Your One Stop Solution to Online book reading</h1><img className='model' src="http://strikersreadingzone.weebly.com/uploads/2/3/0/4/23047136/7243945_orig.gif" alt=""/><h3>Knowledge is power</h3></> : context.booksArray[0].numFound === 0 ? <Error /> :
+        {context.booksArray[0].length === 0 ? <><h1 style={{fontSize: '3vw'}}>Your One Stop Solution to Online book reading!</h1><img className='model' src="http://strikersreadingzone.weebly.com/uploads/2/3/0/4/23047136/7243945_orig.gif" alt=""/><h3 style={{fontSize: '2vw'}}>Knowledge is power</h3></> : context.booksArray[0].numFound === 0 ? <Error /> :
         <div className="CardArea">
           {context.booksArray[0]['docs'].map((item,index) => <div id={index} key={index} className='Card'>
           <img src={`https://covers.openlibrary.org/b/olid/${item.cover_edition_key}-L.jpg`} alt="item.cover_edition_key" />
@@ -97,11 +97,11 @@ const Home = () => {
             <img style={{width: '100%', minHeight: '35vh'}} src={`https://covers.openlibrary.org/b/olid/${context.booksArray[0]['docs'][context.bookPos[0]].cover_edition_key}-M.jpg`} alt="" />
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2, mx: 5 }}>
-            <h4 style={{fontFamily: "'Mochiy Pop One', sans-serif", fontSize: '25px'}}>{context.booksArray[0]['docs'][context.bookPos[0]].title}</h4>
-            <p style={{fontFamily: "'Mochiy Pop One', sans-serif",fontSize: '12px'}}> Publish Year : {context.booksArray[0]['docs'][context.bookPos[0]].first_publish_year}</p>
-            <p style={{fontFamily: "'Mochiy Pop One', sans-serif",fontSize: '12px'}}> Author : {context.booksArray[0]['docs'][context.bookPos[0]].author_name[0]}</p>
-            <p style={{fontFamily: "'Mochiy Pop One', sans-serif",fontSize: '12px'}}> Pages : {context.booksArray[0]['docs'][context.bookPos[0]].number_of_pages_median}</p>
-            <a target="blank" href={`https://openlibrary.org/${context.booksArray[0]['docs'][context.bookPos[0]].key}`} style={{fontFamily: "'Mochiy Pop One', sans-serif", color: 'black', textDecoration:'none'}}>View In OpenLibrary</a>
+            <h4 style={{color: 'white', fontFamily: "'Mochiy Pop One', sans-serif", fontSize: '25px'}}>{context.booksArray[0]['docs'][context.bookPos[0]].title}</h4>
+            <p style={{color: 'white', fontFamily: "'Mochiy Pop One', sans-serif",fontSize: '12px'}}> Publish Year : {context.booksArray[0]['docs'][context.bookPos[0]].first_publish_year}</p>
+            <p style={{color: 'white', fontFamily: "'Mochiy Pop One', sans-serif",fontSize: '12px'}}> Author : {context.booksArray[0]['docs'][context.bookPos[0]].author_name[0]}</p>
+            <p style={{color: 'white', fontFamily: "'Mochiy Pop One', sans-serif",fontSize: '12px'}}> Pages : {context.booksArray[0]['docs'][context.bookPos[0]].number_of_pages_median}</p>
+            <a target="blank" href={`https://openlibrary.org/${context.booksArray[0]['docs'][context.bookPos[0]].key}`} style={{color: 'white', fontFamily: "'Mochiy Pop One', sans-serif", textDecoration:'none'}}>View In OpenLibrary</a>
           </Typography>
         </Box>
       </Modal>
