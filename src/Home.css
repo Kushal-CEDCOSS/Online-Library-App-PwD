@@ -5,35 +5,50 @@
     justify-content: space-evenly;
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(to right, #579AE1, #4F8CCD, #386494, #2E5179, #234060);
+    background-color: white;
 }
 .topRow{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    width: 80%;
+    width: 100%;
+    min-height: 15vh;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #fd782b,  rgb(245, 245, 245), #4fcd6a);
+    z-index: 3;
+}
+.topRow img{
+    width: 10%;
+    height: 10vh;
+    border-radius: 10px;
 }
 #search{
     font-size: 2vw;
-    color: white;
 }
 
 
 .bottomRow{
     display: flex;
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right: 0;
+    min-height: 85vh;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    min-height: 50vh;
     width: 100%;
+    transition: all 1s ease-in;
+    background-color: white;
 }
 .bottomRow > h1{
     font-family: 'Mochiy Pop One', sans-serif;
-    color: white;
 }
 .bottomRow > h3{
-    color: white;
     font-family: 'Homemade Apple', cursive;
 }
 .model{
@@ -49,7 +64,7 @@
     flex-wrap: wrap;
     width: 100%;
     min-height: 150vh;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .Card{
@@ -57,8 +72,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 65vh;
-    width: 25%;
+    min-height: 60vh;
+    width: 20%;
     box-shadow: 5px 5px 10px rgb(71, 71, 71);
     margin: 2%;
     background-image: linear-gradient(to top, rgb(136, 255, 165),cyan, white);
@@ -66,7 +81,7 @@
 }
 
 .Card:hover{
-    transform: scale(1.055,1.055);
+    animation: enlarge 1s ease-in-out ;
 }
 .Card>img{
     width: 100%;
@@ -82,14 +97,26 @@
     text-align: center;
 }
 
+.darkTheme{
+    background-color: rgb(55, 110, 155);
+    color: whitesmoke;
+    z-index: 0;
+    transition: all 1s ease-in-out;
+}
+
+@keyframes enlarge {
+    0%{
+        transform: scale(1,1);
+    }
+    50%{
+        transform: scale(1.10,1.10);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
 @media screen and (max-width: 700px) {
-    .topRow{
-        flex-direction: column;
-        min-height: 20vh;
-    }
-    #searchButton{
-        margin-top: 5%;
-    }
+    
     .CardArea{
         flex-direction: column;
     }
@@ -97,3 +124,4 @@
         width: 50%;
     }
 }
+

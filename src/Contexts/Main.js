@@ -8,13 +8,14 @@ const Main = (props) => {
     const [check, setCheck] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const [bookPos, setBookPos] = useState('');
+    const [darkTheme, setDarkTheme] = useState(false);
   
 
     useEffect(()=> {
         document.getElementById('search').focus();      
       },[])
     return (
-    <MyContext.Provider value={{booksArray : [books, setBooks], check : [check, setCheck], modal : [modalOpen, setModalOpen], bookPos: [bookPos, setBookPos]}}>
+    <MyContext.Provider value={{booksArray : [books, setBooks], check : [check, setCheck], modal : [modalOpen, setModalOpen], bookPos: [bookPos, setBookPos], darkTheme: [darkTheme, setDarkTheme]}}>
     {props.children}
     </MyContext.Provider>
     )
